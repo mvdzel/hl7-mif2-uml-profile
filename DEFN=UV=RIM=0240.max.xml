@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<max:model xmlns:max="http://www.umcg.nl/MAX" xmlns:mif="urn:hl7-org:v3/mif2">
+   <objects>
+      <object>
+         <id>PDEFN==RIM==</id>
+         <name>DEFN==RIM==</name>
+         <stereotype>StaticModel</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=DT=2.0</id>
+         <name>DEFN=UV=DT=2.0</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=VO=1175-20120802</id>
+         <name>DEFN=UV=VO=1175-20120802</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>EAct</id>
+         <name>Act</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object>
+         <id>EEntity</id>
+         <name>Entity</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object>
+         <id>EParameter</id>
+         <name>Parameter</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object>
+         <id>EQueryByParameter</id>
+         <name>QueryByParameter</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object>
+         <id>ERole</id>
+         <name>Role</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object>
+         <id>ETransmission</id>
+         <name>Transmission</name>
+         <notes/>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CAct</id>
+         <name>Act</name>
+         <notes>A record of something that is being done, has been done, can be done, or is intended or requested to be done. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="classCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The major class of Acts to which an Act-instance belongs.</attribute>
+         <attribute name="moodCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The intended use of the Act statement: as a report of fact, a command, a possibility, a goal, etc.</attribute>
+         <attribute name="id" minCard="0" maxCard="*" type="DSET&lt;II&gt;">A unique identifier for the Act.</attribute>
+         <attribute name="code" minCard="0" maxCard="1" type="CD">The particular kind of Act that the Act-instance represents within its class. </attribute>
+         <attribute name="actionNegationInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator specifying that the Act statement is a negation of the Act in Event mood as described by the descriptive attributes.</attribute>
+         <attribute name="negationInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indication that the Act statement is a negation of the Act as described by the descriptive attributes.</attribute>
+         <attribute name="derivationExpr" minCard="0" maxCard="1" type="ST.SIMPLE">A character string containing a formal language expression that specifies how the Act's attributes are, should be,  or have been derived from input parameters associated with derivation relationships.</attribute>
+         <attribute name="title" minCard="0" maxCard="1" type="ED">A word or phrase by which a specific Act may be known among people.</attribute>
+         <attribute name="text" minCard="0" maxCard="1" type="ED">A renderable textual or multimedia description (or reference to a description) of the complete information which would reasonably be expected to be displayed to a human reader conveyed by the Act.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">The state of the Act.</attribute>
+         <attribute name="effectiveTime" minCard="0" maxCard="1" type="QSET&lt;TS&gt;">The clinically or operationally relevant time of an act, exclusive of administrative activity. </attribute>
+         <attribute name="activityTime" minCard="0" maxCard="1" type="QSET&lt;TS&gt;">A time expression specifying when an Observation, Procedure, or other Act occurs, or, depending on the mood, is supposed to occur, scheduled to occur, etc. The activityTime includes the times of component actions (such as preparation and clean-up).  For Procedures and SubstanceAdministrations, the activityTime can provide a needed administrative function by providing a more inclusive time to be anticipated in scheduling. </attribute>
+         <attribute name="availabilityTime" minCard="0" maxCard="1" type="TS">The point in time at which information about Act-instance (regardless of mood) first became available to a system reproducing this Act. The availabilityTime is metadata describing the record, not the Act.</attribute>
+         <attribute name="priorityCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen. </attribute>
+         <attribute name="confidentialityCode" minCard="0" maxCard="1" type="CD">Constraints around appropriate disclosure of information about this Act, regardless of mood.</attribute>
+         <attribute name="repeatNumber"
+                    minCard="0"
+                    maxCard="1"
+                    type="IVL&lt;INT.NONNEG&gt;">An interval of integer numbers stating the minimal and maximal number of repetitions of the Act.</attribute>
+         <attribute name="interruptibleInd" minCard="0" maxCard="1" type="BL">An indication that the Act is interruptible by asynchronous events.</attribute>
+         <attribute name="levelCode" minCard="0" maxCard="1" type="CD">Code specifying the level within a hierarchical Act composition structure and the kind of contextual information attached to composite Acts ("containers") and propagated to component Acts within those containers. The levelCode signifies the position within such a containment hierarchy and the applicable constraints.</attribute>
+         <attribute name="independentInd" minCard="0" maxCard="1" type="BL">An indicator specifying whether the Act can be manipulated independently of other Acts or only through a super-ordinate composite Act that has this Act as a component. </attribute>
+         <attribute name="uncertaintyCode" minCard="0" maxCard="1" type="CD">An indication that the Act statement as a whole, with its subordinate components has been asserted to be uncertain in some way.</attribute>
+         <attribute name="reasonCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act.</attribute>
+         <attribute name="languageCode" minCard="0" maxCard="1" type="CD">The primary language in which this Act statement is specified, particularly the language of the Act.text.</attribute>
+         <attribute name="isCriterionInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">If true, indicates that the data conveyed by the act, including outbound associations, represent "criteria" for some other act, not a "real" act. I.e. If an Act exists with a classCode of ACT and a moodCode of RQO and isCriterionInd is true, it does not represent an order for an act. Rather, it represents a criteria that will match on all orders.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CContextStructure</id>
+         <name>ContextStructure</name>
+         <notes>A a container within a document.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="setId" minCard="0" maxCard="1" type="II">A unique identifier for a report.</attribute>
+         <attribute name="versionNumber" minCard="0" maxCard="1" type="ST">A unique identifier for a version of a report.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CEntity</id>
+         <name>Entity</name>
+         <notes>A physical thing, group of physical things or an organization capable of participating in Acts while in a role. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="classCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The major class of Entities to which an Entity-instance belongs.</attribute>
+         <attribute name="determinerCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">A code specifying whether the Entity object represents a universal (KIND) vs. a particular (INSTANCE).</attribute>
+         <attribute name="id" minCard="0" maxCard="*" type="DSET&lt;II&gt;">A unique identifier for the Entity.</attribute>
+         <attribute name="code" minCard="0" maxCard="1" type="CD">The specific kind of Entity to which an Entity-instance belongs.</attribute>
+         <attribute name="quantity" minCard="0" maxCard="1" type="PQ">A physical quantity specifying the amount of the physical thing represented by the Entity object, either as a count of the members of a group, or as some other physical quantity. Describes the amount of the Entity, irrespective of potential Participations of the Entity as a whole or in parts. In order to explicitly identify a group of like entities, a static model design should constrain the PQ data type of this attribute to INT, thus providing a count of the entities in the group. </attribute>
+         <attribute name="name" minCard="0" maxCard="*" type="COLL&lt;EN&gt;">A non-unique textual identifier or moniker for the Entity.</attribute>
+         <attribute name="desc" minCard="0" maxCard="1" type="ED">A textual or multimedia depiction of the Entity.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">A value representing whether the information associated with an Entity is currently active or inactive for the purpose of participation in acts.</attribute>
+         <attribute name="existenceTime" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">An interval of time specifying the period in which the Entity physically existed.  </attribute>
+         <attribute name="telecom" minCard="0" maxCard="*" type="COLL&lt;TEL&gt;">A telecommunication address for the Entity.</attribute>
+         <attribute name="riskCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The type of hazard or threat associated with the Entity.</attribute>
+         <attribute name="handlingCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">A value representing special handling requirements for the Entity.</attribute>
+      </object>
+      <object isAbstract="true">
+         <id>CInfrastructureRoot</id>
+         <name>InfrastructureRoot</name>
+         <notes>An abstract super-type for all RIM classes, either directly or through inheritance.  </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="nullFlavor"
+                    minCard="0"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">An indicator that the class instance is null, including the flavor of null that is intended.</attribute>
+         <attribute name="realmCode" minCard="0" maxCard="*" type="DSET&lt;CS&gt;">A vocabulary domain qualifier that allows the vocabulary domain of coded attributes to be specialized according to the geographical, organizational, or political environment where the HL7 standard is being used.</attribute>
+         <attribute name="typeId" minCard="0" maxCard="1" type="II">The unique identifier for an HL7 static structure that imposes constraints on the artifact.</attribute>
+         <attribute name="templateId" minCard="0" maxCard="*" type="LIST&lt;II&gt;">The unique identifier for a template that imposes constraints on the artifact.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CLivingSubject</id>
+         <name>LivingSubject</name>
+         <notes>An organism, alive or not. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="administrativeGenderCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The gender (i.e., the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.</attribute>
+         <attribute name="birthTime" minCard="0" maxCard="1" type="TS">The date and time of a living subject's birth or hatching.</attribute>
+         <attribute name="deceasedInd" minCard="0" maxCard="1" type="BL">An indication that the subject is dead.</attribute>
+         <attribute name="deceasedTime" minCard="0" maxCard="1" type="TS">The date and time that a living subject's death occurred.</attribute>
+         <attribute name="multipleBirthInd" minCard="0" maxCard="1" type="BL">An indication as to whether the living subject is part of a multiple birth.</attribute>
+         <attribute name="multipleBirthOrderNumber"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.POS">The order within a multiple birth in which this living subject was born.</attribute>
+         <attribute name="organDonorInd" minCard="0" maxCard="1" type="BL">An indication that the living subject is a candidate to serve as an organ donor.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CManufacturedMaterial</id>
+         <name>ManufacturedMaterial</name>
+         <notes>An Entity or combination of Entities transformed for a particular purpose by a manufacturing process.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="lotNumberText" minCard="0" maxCard="1" type="ST.SIMPLE">An identifier for a particular batch of manufactured material.</attribute>
+         <attribute name="expirationTime" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">The date and time after which the manufacturer no longer ensures the safety, quality, and/or proper functioning of the material.</attribute>
+         <attribute name="stabilityTime" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">The duration over which the material is considered useable after it is activated.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CMaterial</id>
+         <name>Material</name>
+         <notes>A subtype of Entity that is inanimate and locationally independent. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="formCode" minCard="0" maxCard="1" type="CD">The physical state and nature of the material.  </attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CObservation</id>
+         <name>Observation</name>
+         <notes>An act that is intended to result in new information about a subject.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="value" minCard="0" maxCard="*" type="ANY">The result of the observation action.</attribute>
+         <attribute name="valueNegationInd" minCard="0" maxCard="1" type="BL">Indicates that when the observation event occurred, the finding communicated by the value attribute was </attribute>
+         <attribute name="interpretationCode"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;CD&gt;">A qualitative interpretation of the observation.</attribute>
+         <attribute name="methodCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The means or technique used to ascertain the observation.</attribute>
+         <attribute name="targetSiteCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The anatomical site or system that is the focus of the observation. </attribute>
+      </object>
+      <object isAbstract="true">
+         <id>CParameter</id>
+         <name>Parameter</name>
+         <notes>A uniquely identifiable value or set of values to be used as a query criterion. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="id" minCard="0" maxCard="1" type="II">A unique identifier for a parameter.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CParticipation</id>
+         <name>Participation</name>
+         <notes>An association between an Act and a Role. The Entity playing the Role is the actor. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The kind of Participation or involvement the Entity playing the Role associated with the Participation has with regard to the associated Act.</attribute>
+         <attribute name="functionCode" minCard="0" maxCard="1" type="CD">Additional detail about the function that the Participation has in the Act, if such detail is not implied by the Participation.typeCode.</attribute>
+         <attribute name="contextControlCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The manner in which this Participation contributes to the context of the current Act, and whether it may be propagated to descendent Acts whose associations allow such propagation (see ActRelationship.contextConductionInd).</attribute>
+         <attribute name="sequenceNumber" minCard="0" maxCard="1" type="INT.NONNEG">An integer specifying the relative order of occurrence of the Participation in relation to other Participations of the same Act of the same type (same typeCode).</attribute>
+         <attribute name="priorityNumber" minCard="0" maxCard="1" type="INT.POS">An integer specifying the relative preference for considering this relationship before other like-typed (same typeCode) relationships having the same source Act.  Relationships with lower priorityNumber values are considered before and above those with higher values.</attribute>
+         <attribute name="negationInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator stipulating that the specified participation did not, does not, or should not occur, depending on mood.</attribute>
+         <attribute name="noteText" minCard="0" maxCard="1" type="ED">A textual or multimedia depiction of commentary related to the participation. </attribute>
+         <attribute name="time" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">The time during which the participant is involved in the act through this Participation.</attribute>
+         <attribute name="modeCode" minCard="0" maxCard="1" type="CD">The modality by which the Entity playing the Role is participating in the Act.</attribute>
+         <attribute name="awarenessCode" minCard="0" maxCard="1" type="CD">The extent to which the Entity playing the participating Role is aware of the associated Act.</attribute>
+         <attribute name="signatureCode" minCard="0" maxCard="1" type="CD">Whether the participant has attested participation through a signature, or whether such a signature is needed.</attribute>
+         <attribute name="signatureText" minCard="0" maxCard="1" type="ED">A textual or multimedia depiction of the signature by which the participant endorses and accepts responsibility for his or her participation in the Act as specified in the Participation.typeCode.</attribute>
+         <attribute name="performInd" minCard="0" maxCard="1" type="BL">An indication that that the resource for this Participation must be reserved before use (i.e., it is controlled by a schedule).</attribute>
+         <attribute name="substitutionConditionCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The conditions under which a participating item may be replaced with a different one.</attribute>
+         <attribute name="subsetCode" minCard="0" maxCard="1" type="CS">An indication that the participation is a filtered subset of the total participations of the same type associated with the Act. </attribute>
+         <attribute name="quantity" minCard="0" maxCard="1" type="PQ">Specifies the amount of the player Entity of the Participation's  role that is used (applied, administered, consumed, provided, or created) in the Participation's act.
+</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CProcedure</id>
+         <name>Procedure</name>
+         <notes>An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="methodCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The means or technique used to perform the procedure.</attribute>
+         <attribute name="approachSiteCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The anatomical site or system through which the procedure reaches its target.</attribute>
+         <attribute name="targetSiteCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">The anatomical site or system that is the focus of the procedure.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CQueryEvent</id>
+         <name>QueryEvent</name>
+         <notes>An abstract class that generalizes all query message interactions.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="queryId" minCard="0" maxCard="1" type="II">A unique identifier for a query.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">Reflects the status of the QueryEvent - its current locus in its own state-machine.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CQuerySpec</id>
+         <name>QuerySpec</name>
+         <notes>The criteria and response expectations to be applied in the query.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="modifyCode" minCard="0" maxCard="1" type="CS">An indication as to whether the subscription to a query is new or is being modified.</attribute>
+         <attribute name="responseElementGroupId"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;II&gt;">The message type to be returned in the query response.</attribute>
+         <attribute name="responseModalityCode" minCard="0" maxCard="1" type="CS">The timing and grouping of the response instances.</attribute>
+         <attribute name="responsePriorityCode" minCard="0" maxCard="1" type="CS">The time frame in which the requesting application expects a response.</attribute>
+         <attribute name="initialQuantity" minCard="0" maxCard="1" type="INT.POS">The maximum size of the response that can be accepted by the requesting application.</attribute>
+         <attribute name="initialQuantityCode" minCard="0" maxCard="1" type="CD">The units associated with the size limit specified in initialQuantityCode.</attribute>
+         <attribute name="executionAndDeliveryTime"
+                    minCard="0"
+                    maxCard="1"
+                    type="TS">Specifies the time the response is to be returned. If the query priority is Deferred, then executionAndDeliveryTime should be interpreted as the point in time when the response should be sent. If the query priority is Immediate executionAndDeliveryTime should be interpreted as the point in time before which the responding system should have send a response. </attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CRole</id>
+         <name>Role</name>
+         <notes>A competency of the Entity that plays the Role as identified, defined, guaranteed, or acknowledged by the Entity that scopes the Role. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="classCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The major class of Role to which a Role-instance belongs.</attribute>
+         <attribute name="id" minCard="0" maxCard="*" type="DSET&lt;II&gt;">A unique identifier for the player Entity in this Role.</attribute>
+         <attribute name="code" minCard="0" maxCard="1" type="CD">The specific kind of Role to which an Role-instance belongs.</attribute>
+         <attribute name="negationInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator specifying that the Role is a competency that is specifically not attributed to the Entity playing the Role.</attribute>
+         <attribute name="name" minCard="0" maxCard="*" type="COLL&lt;EN&gt;">A non-unique textual identifier or moniker for the playing Entity intended for use principally when playing the Role.</attribute>
+         <attribute name="addr" minCard="0" maxCard="*" type="COLL&lt;AD&gt;">A postal address for the Entity while in the Role.</attribute>
+         <attribute name="telecom" minCard="0" maxCard="*" type="COLL&lt;TEL&gt;">A telecommunication address for the Entity while in the Role.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">The state of this Role as defined in the state-transition model.</attribute>
+         <attribute name="effectiveTime" minCard="0" maxCard="1" type="QSET&lt;TS&gt;">An interval of time specifying the period during which the Role is in effect, if such time limit is applicable and known.</attribute>
+         <attribute name="certificateText" minCard="0" maxCard="*" type="ED">A textual or multimedia depiction of a certificate issued by the scoping Entity of a Role certifying that this Role is indeed played by the player Entity.</attribute>
+         <attribute name="confidentialityCode" minCard="0" maxCard="1" type="CD">Constraints around appropriate disclosure of information about this Role.</attribute>
+         <attribute name="quantity" minCard="0" maxCard="1" type="RTO">A ratio (numerator : denominator) where the numerator specifies the amount of the Entity playing the Role and the denominator specifies the amount of the Entity scoping the Role. Thus, the ratio specifies the relative amount of the "contained" entity in the "containing" entity.</attribute>
+         <attribute name="priorityNumber" minCard="0" maxCard="1" type="INT.POS">An integer specifying the relative preference for considering this role instance before other like-typed Roles (same classCode and code) having the same scoper.  Roles with lower priorityNumber values are considered before and above those with higher values.</attribute>
+         <attribute name="positionNumber"
+                    minCard="0"
+                    maxCard="*"
+                    type="LIST&lt;INT.NONNEG&gt;">An integer specifying the position of the Entity playing the Role with respect to the Entity that scopes the Role.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CSupply</id>
+         <name>Supply</name>
+         <notes>Provision of a material by one entity to another.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="quantity" minCard="0" maxCard="1" type="PQ">Specifies the amount of the player Entity of the "product" Participation's role that that was or is to be supplied.</attribute>
+         <attribute name="expectedUseTime" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">The period time over which the supplied product is expected to be used.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CTransmission</id>
+         <name>Transmission</name>
+         <notes>Information about a specific transmission of information from one application to another.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="id" minCard="0" maxCard="1" type="II">A unique identifier for the transmission.</attribute>
+         <attribute name="creationTime" minCard="0" maxCard="1" type="TS">The date/time that the sending system created the transmission.</attribute>
+         <attribute name="securityText" minCard="0" maxCard="1" type="ST.SIMPLE">Not defined.</attribute>
+         <attribute name="responseModeCode" minCard="0" maxCard="1" type="CS">The transmission mode with which a receiver should communicate its receiver responsibilities.</attribute>
+         <attribute name="versionCode" minCard="0" maxCard="1" type="CS"> A unique identifier for a version of a transmission that may be modified and resent.</attribute>
+         <attribute name="interactionId" minCard="0" maxCard="1" type="II">The identifier of the V3 interaction that constrains the transmission.</attribute>
+         <attribute name="profileId" minCard="0" maxCard="*" type="LIST&lt;II&gt;">The identifier of the profile(s) that constrain the transmission. Includes the version of the specification(s) with which a given instance is compliant.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAccess</id>
+         <name>Access</name>
+         <notes>A role played by a device when the device is used to administer therapeutic agents (medication and vital elements) into the body, or to drain material (e.g., exudates, pus, urine, air, blood) out of the body.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="approachSiteCode" minCard="0" maxCard="1" type="CD">The anatomic site where the Access (cannula, line or drain) first enters the body and, if applicable, a routing from the first entrance to the target site.</attribute>
+         <attribute name="targetSiteCode" minCard="0" maxCard="1" type="CD">The site or body compartment into which access is being provided, (i.e., the compartment into which material is administered or from which it is collected).</attribute>
+         <attribute name="gaugeQuantity" minCard="0" maxCard="1" type="PQ">The inner diameter of the access.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAccount</id>
+         <name>Account</name>
+         <notes>A set of financial transactions that are tracked and reported together with a single balance.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="balanceAmt" minCard="0" maxCard="1" type="MO">The sum total of the debit and credit transactions that have posted to the account.</attribute>
+         <attribute name="currencyCode" minCard="0" maxCard="1" type="CD">The currency that the account is managed in.</attribute>
+         <attribute name="interestRateQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="RTO&lt;MO&gt;">The rate of interest that the account balance may be subject to.</attribute>
+         <attribute name="allowedBalanceQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="IVL&lt;MO&gt;">An interval describing the minimum and maximum allowed balances for an account.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAcknowledgement</id>
+         <name>Acknowledgement</name>
+         <notes>Metadata necessary when acknowledging a message.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The acknowledgement as defined in an enumerated set of acknowledgement types.</attribute>
+         <attribute name="expectedSequenceNumber"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.POS">The sequence number of the message within a set of messages.</attribute>
+         <attribute name="messageWaitingNumber"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The number of messages the acknowledging application has waiting in queue for the receiving application.</attribute>
+         <attribute name="messageWaitingPriorityCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The highest level of importance in the set of messages the acknowledging application has waiting in queue for the receiving application.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAcknowledgementDetail</id>
+         <name>AcknowledgementDetail</name>
+         <notes>A message that provides information about the communication, parsing or formal (non-business-rule) validation of the message being acknowledged.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The kind of information specified in the acknowledgement message.</attribute>
+         <attribute name="code" minCard="0" maxCard="1" type="CD">The type of acknowledgement, from an enumerated set of acknowledgement types.</attribute>
+         <attribute name="text" minCard="0" maxCard="1" type="ED">Additional diagnostic information relevant to the message.</attribute>
+         <attribute name="location" minCard="0" maxCard="*" type="DSET&lt;ST&gt;">Definition: The position within the message being acknowledged that is related to the acknowledgement message.</attribute>
+      </object>
+      <object isAbstract="true">
+         <id>CActHeir</id>
+         <name>ActHeir</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CActRelationship</id>
+         <name>ActRelationship</name>
+         <notes>A directed association between a source Act and a target Act. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The meaning and purpose of the ActRelationship instance. </attribute>
+         <attribute name="inversionInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator specifying that the ActRelationship.typeCode should be interpreted as if the roles of the source and target Acts were reversed. </attribute>
+         <attribute name="blockedContextActRelationshipType"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;CS&gt;"
+                    isReadOnly="true">Identifies the type(s) of ActRelationships that are not permitted to conduct across this ActRelationship.</attribute>
+         <attribute name="blockedContextParticipationType"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;CS&gt;"
+                    isReadOnly="true">Identifies the type(s) of Participations that are not permitted to conduct across this ActRelationship.</attribute>
+         <attribute name="actAttributeContextBlockedInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BN"
+                    isReadOnly="true">Blocks conduction of act attribute values across this act relationship when true.</attribute>
+         <attribute name="contextControlCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The manner in which this ActRelationship contributes to the context of the current Act, and whether it may be propagated to descendent Acts whose association allows such propagation (see ActRelationship.contextConductionInd).</attribute>
+         <attribute name="contextConductionInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator determining whether associations in the parent act are to be conducted across the ActRelationship to the child act.</attribute>
+         <attribute name="sequenceNumber" minCard="0" maxCard="1" type="INT.NONNEG">An integer specifying the relative sequential ordering of this relationship among other like-types relationships having the same source Act.</attribute>
+         <attribute name="priorityNumber" minCard="0" maxCard="1" type="REAL">An integer specifying the relative preference for considering this  relationship before other like-typed relationships having the same source Act. Relationships with lower priorityNumber values are considered before and above those with higher values.</attribute>
+         <attribute name="pauseQuantity" minCard="0" maxCard="1" type="PQ.TIME">A quantity of time that elapses or should elapse between the source act and the target act.</attribute>
+         <attribute name="checkpointCode" minCard="0" maxCard="1" type="CS">The point in the course of an Act when a precondition for the Act is evaluated: e.g., before the Act starts for the first time, before every repetition, after each repetition but not before the first, or throughout the entire time of the Act.</attribute>
+         <attribute name="splitCode" minCard="0" maxCard="1" type="CS">The manner in which branches in an action plan are selected from among other branches.</attribute>
+         <attribute name="joinCode" minCard="0" maxCard="1" type="CS">The manner in which concurrent Acts are resynchronized in a parallel branch construct.</attribute>
+         <attribute name="negationInd"
+                    minCard="0"
+                    maxCard="1"
+                    type="BL"
+                    isReadOnly="true">An indicator that asserts that the meaning of the link is negated.</attribute>
+         <attribute name="conjunctionCode" minCard="0" maxCard="1" type="CS">The logical conjunction of the criteria among all the condition-links of Acts (e.g., and, or, exlusive-or).</attribute>
+         <attribute name="localVariableName"
+                    minCard="0"
+                    maxCard="1"
+                    type="ST.SIMPLE">A character string name for the input parameter from which the source Act of this ActRelationship derives some of its attributes. The local variable name is bound in the scope of the Act.derivationExpr with its value being an Act selected based on the input parameter specified by this attribute.</attribute>
+         <attribute name="seperatableInd" minCard="0" maxCard="1" type="BL">An indication that the source Act is intended to be interpreted independently of the target Act.</attribute>
+         <attribute name="subsetCode" minCard="0" maxCard="1" type="CS">An indication that the target of the relationship will be a filtered subset of the total related set of targets.</attribute>
+         <attribute name="uncertaintyCode" minCard="0" maxCard="1" type="CD">An assertion that specific relationship between the source and target Acts is uncertain. </attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAttachment</id>
+         <name>Attachment</name>
+         <notes>An addressable data block which can be referred to from the interior of the message. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="id" minCard="0" maxCard="1" type="II">An identifier for the attachment referenced by an ED attribute contained elsewhere in the interaction.</attribute>
+         <attribute name="text" minCard="0" maxCard="1" type="ED">The data block that constitutes the attachment</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CAttentionLine</id>
+         <name>AttentionLine</name>
+         <notes>A collection of parameters related to a transmission that may need to be accessible from the transmission wrapper. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="keyWordText" minCard="0" maxCard="1" type="SC.NT">A category of attentionLine parameter.</attribute>
+         <attribute name="value" minCard="0" maxCard="*" type="ANY">A value associated with the key as provided in the AttentionLine.keyWordText attribute.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CBatch</id>
+         <name>Batch</name>
+         <notes>A message which is a collection of HL7 V3 messages. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="referenceControlId" minCard="0" maxCard="1" type="II">The control identifier of the batch when it was originally transmitted.</attribute>
+         <attribute name="name" minCard="0" maxCard="1" type="SC.NT">An identifier for the batch.</attribute>
+         <attribute name="batchComment" minCard="0" maxCard="*" type="DSET&lt;ST&gt;">Comments related to the batch.</attribute>
+         <attribute name="transmissionQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The count of individual transmissions contained within the batch, including nested batches.</attribute>
+         <attribute name="batchTotalNumber"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;INT.NONNEG&gt;">The total number of messages in the batch.</attribute>
+         <attribute name="contentProcessingModeCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The type of content processing that the receiver of the batch is expected to undertake.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CCommunicationFunction</id>
+         <name>CommunicationFunction</name>
+         <notes>A relationship class that binds the various entities participating in the transmission (sender, receiver, respond-to) to be linked to the transmission.  </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The role of an entity with respect to the transmission.</attribute>
+         <attribute name="telecom" minCard="0" maxCard="1" type="TEL">The telecomm address that can be used to reach the entity in the identified role.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CContainer</id>
+         <name>Container</name>
+         <notes>An Entity that holds other Entities.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="capacityQuantity" minCard="0" maxCard="1" type="PQ">The functional capacity of the container.</attribute>
+         <attribute name="heightQuantity" minCard="0" maxCard="1" type="PQ">The height of the container.</attribute>
+         <attribute name="diameterQuantity" minCard="0" maxCard="1" type="PQ">The outside diameter of the container.</attribute>
+         <attribute name="capTypeCode" minCard="0" maxCard="1" type="CD">The type of cap (closure) associated with the container that is the entity being described.</attribute>
+         <attribute name="separatorTypeCode" minCard="0" maxCard="1" type="CD">A material added to a container to facilitate and create a physical separation of specimen components of differing density.</attribute>
+         <attribute name="barrierDeltaQuantity" minCard="0" maxCard="1" type="PQ">The distance from the point of reference to the separator material (barrier) within a container. </attribute>
+         <attribute name="bottomDeltaQuantity" minCard="0" maxCard="1" type="PQ">The distance from the Point of Reference to the outside bottom of the container. </attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CControlAct</id>
+         <name>ControlAct</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CDevice</id>
+         <name>Device</name>
+         <notes>A ManufacturedMaterial used in an activity without being substantially changed through that activity.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="manufacturerModelName" minCard="0" maxCard="1" type="SC">The human designated moniker for a device, assigned by the manufacturer.</attribute>
+         <attribute name="softwareName" minCard="0" maxCard="1" type="SC">The moniker, version and release of the software that operates the device as assigned by the software manufacturer or developer.</attribute>
+         <attribute name="localRemoteControlStateCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The state of control of the device.</attribute>
+         <attribute name="alertLevelCode" minCard="0" maxCard="1" type="CD">The current functional status of an automated device. </attribute>
+         <attribute name="lastCalibrationTime" minCard="0" maxCard="1" type="TS">The date and time the device was last calibrated.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CDeviceTask</id>
+         <name>DeviceTask</name>
+         <notes>An activity of an automated system.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="parameterValue" minCard="0" maxCard="*" type="LIST&lt;ANY&gt;">The parameters of the task submitted to the device upon the issuance of a command (or configuring the schedule of spontaneously executed tasks).</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CDiagnosticImage</id>
+         <name>DiagnosticImage</name>
+         <notes>An observation in the form of a spatial representational of a physical subject suitable for visual presentation.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="subjectOrientationCode" minCard="0" maxCard="1" type="CD">The spatial relation between an imaged object and the imaging film or detector.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CDiet</id>
+         <name>Diet</name>
+         <notes>A supply Act dealing specifically with the feeding or nourishment of a subject.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="energyQuantity" minCard="0" maxCard="1" type="PQ">The supplied biologic energy (calories) per day.</attribute>
+         <attribute name="carbohydrateQuantity" minCard="0" maxCard="1" type="PQ">The supplied amount of carbohydrates per day.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CDocument</id>
+         <name>Document</name>
+         <notes>A specialization of Act that supports the characteristics unique to document management services. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="completionCode" minCard="0" maxCard="1" type="CD">A code depicting the completion status of a report.</attribute>
+         <attribute name="storageCode" minCard="0" maxCard="1" type="CD">The storage status of a report.</attribute>
+         <attribute name="copyTime" minCard="0" maxCard="1" type="TS">The time a document is released (i.e., copied or sent to a display device) from a document management system that maintains revision control over the document.  </attribute>
+         <attribute name="bibliographicDesignationText"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;ED&gt;">A citation for a cataloged document that permits its identification, location and/or retrieval from common collections.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CEmployee</id>
+         <name>Employee</name>
+         <notes>A role played by a person who is associated with an organization to receive wages or salary.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="jobCode" minCard="0" maxCard="1" type="CD">An employer-defined categorization of work.</attribute>
+         <attribute name="jobTitleName" minCard="0" maxCard="1" type="SC">The title associated with the job held.</attribute>
+         <attribute name="jobClassCode" minCard="0" maxCard="1" type="CD">The frequency or periodicity of employment.</attribute>
+         <attribute name="occupationCode" minCard="0" maxCard="1" type="CD">A value that qualifies the classification of 'kind-of-work' based upon a recognized industry or jurisdictional standard.</attribute>
+         <attribute name="salaryTypeCode" minCard="0" maxCard="1" type="CD">A value representing the method used by an employer to compute an employee's salary or wages.</attribute>
+         <attribute name="salaryQuantity" minCard="0" maxCard="1" type="MO">The amount paid in salary or wages to an employee.</attribute>
+         <attribute name="hazardExposureText" minCard="0" maxCard="1" type="ED">The hazards associated with the work performed by an employee for an employer.</attribute>
+         <attribute name="protectiveEquipmentText"
+                    minCard="0"
+                    maxCard="1"
+                    type="ED">Protective equipment needed for the job performed by an employee for an employer.</attribute>
+      </object>
+      <object isAbstract="true">
+         <id>CEntityHeir</id>
+         <name>EntityHeir</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CExposure</id>
+         <name>Exposure</name>
+         <notes>An interaction between entities that provides opportunity for transmission of a physical, chemical, or biological agent from an exposure source entity to an exposure target entity.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="routeCode" minCard="0" maxCard="1" type="CD">The physiological path or route for introducing the material into or onto the subject.</attribute>
+         <attribute name="exposureLevel" minCard="0" maxCard="1" type="CD">A qualitative measure of the degree of exposure to the causative agent. </attribute>
+         <attribute name="exposureModeCode" minCard="0" maxCard="1" type="CD">The mechanism by which exposure agent was exchanged or potentially exchanged by the participants involved in the exposure.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CFinancialContract</id>
+         <name>FinancialContract</name>
+         <notes>A contract whose value is measured in monetary terms.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="paymentTermsCode" minCard="0" maxCard="1" type="CD">The payment terms for a contractual agreement or obligation.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CFinancialTransaction</id>
+         <name>FinancialTransaction</name>
+         <notes>An Act representing the movement of a monetary amount between two accounts.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="amt" minCard="0" maxCard="1" type="MO">The monetary amount to be transferred from one account (e.g., credit account) to another account (e.g., debit account).</attribute>
+         <attribute name="creditExchangeRateQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="REAL">A decimal number indicating the rate of exchange to convert the currency of the account being credited to the currency of the transaction net amount.</attribute>
+         <attribute name="debitExchangeRateQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="REAL">A decimal number indicating the rate of exchange to convert the currency of the account being debited to the currency of the transaction net amount.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CInvoiceElement</id>
+         <name>InvoiceElement</name>
+         <notes>A statement and explanation of an amount owed.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="modifierCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">A classifier for the invoice element</attribute>
+         <attribute name="unitQuantity" minCard="0" maxCard="1" type="RTO&lt;PQ&gt;">The number of instances of a product or service that is being billed or charged for.</attribute>
+         <attribute name="unitPriceAmt" minCard="0" maxCard="1" type="RTO&lt;MO&gt;">The monetary cost per unit being accounted.</attribute>
+         <attribute name="netAmt" minCard="0" maxCard="1" type="MO">The total monetary amount for the invoice element, including the sum of any component elements.</attribute>
+         <attribute name="factorNumber" minCard="0" maxCard="1" type="REAL">A multiplier used in determining the overall cost of services delivered and/or goods received.</attribute>
+         <attribute name="pointsNumber" minCard="0" maxCard="1" type="REAL">The weighting of charges for goods or service delivered, based on difficulty, cost and/or resource intensiveness.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CLanguageCommunication</id>
+         <name>LanguageCommunication</name>
+         <notes>The language communication capabilities of an Entity.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="languageCode" minCard="0" maxCard="1" type="CD">A language for which the Entity has some level of proficiency for communication.</attribute>
+         <attribute name="modeCode" minCard="0" maxCard="1" type="CD">The method of expression of the language</attribute>
+         <attribute name="proficiencyLevelCode" minCard="0" maxCard="1" type="CD">The level of proficiency an Entity has in a particular language.</attribute>
+         <attribute name="preferenceInd" minCard="0" maxCard="1" type="BL">An indicator specifying whether the language is preferred by the entity for the associated mode.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CLicensedEntity</id>
+         <name>LicensedEntity</name>
+         <notes>An Entity that is accredited with a license or qualification certifying the capability to perform specific functions.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="recertificationTime" minCard="0" maxCard="1" type="TS">The date recertification is required.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CManagedParticipation</id>
+         <name>ManagedParticipation</name>
+         <notes>A participation that will be operated on over time and thus whose state and identity must be managed. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="id" minCard="0" maxCard="*" type="DSET&lt;II&gt;">A unique identifier used to refer to a specific instance of a ManagedParticipation that may have the same Act and the same Role as another ManagedParticipation.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">The status of the ManagedParticipation.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CMessage</id>
+         <name>Message</name>
+         <notes>The parent class of all HL7 Version 3 messages.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="processingCode" minCard="0" maxCard="1" type="CS">The intended purpose for the message relative to the state of the sending system.</attribute>
+         <attribute name="processingModeCode" minCard="0" maxCard="1" type="CS">The mode in which the message is to be processed.</attribute>
+         <attribute name="acceptAckCode" minCard="0" maxCard="1" type="CS">The conditions under which "accept" acknowledgements are required to be returned in response to this message.</attribute>
+         <attribute name="responseCode" minCard="0" maxCard="1" type="CS">Whether an application response is expected from the addressee of this interaction and what level of detail that response should include.</attribute>
+         <attribute name="sequenceNumber" minCard="0" maxCard="1" type="INT.NONNEG">The index of the message in a sequence.</attribute>
+         <attribute name="attachmentText" minCard="0" maxCard="*" type="DSET&lt;ED&gt;">Arbitrary attachments of data blocks which can be referred to from the interior of the message.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CNonPersonLivingSubject</id>
+         <name>NonPersonLivingSubject</name>
+         <notes>A subtype of LivingSubject that includes all living things except the species homo sapiens.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="strainText" minCard="0" maxCard="1" type="ED">The specific genotypic or phenotypic variant of a Non-Person Living Subject</attribute>
+         <attribute name="genderStatusCode" minCard="0" maxCard="1" type="CD">The state of the primary reproductive organs of a non-person living subject.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>COrganization</id>
+         <name>Organization</name>
+         <notes>An Entity representing a formalized group of persons or other organizations with a common purpose and the infrastructure to carry out that purpose.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="addr" minCard="0" maxCard="*" type="COLL&lt;AD&gt;">The postal or residential address of an organization.</attribute>
+         <attribute name="standardIndustryClassCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The industrial category of an organization.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CParameterItem</id>
+         <name>ParameterItem</name>
+         <notes>A valued element structure (name-value pair) for an element specified in a query.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="value" minCard="0" maxCard="*" type="ANY">The value of the element specified in the query response.</attribute>
+         <attribute name="semanticsText" minCard="1" maxCard="1" type="SC.NT">A code or string indicating the name of a parameter item.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CParameterList</id>
+         <name>ParameterList</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CPatient</id>
+         <name>Patient</name>
+         <notes>A LivingSubject as a recipient of health care services from a healthcare provider.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="veryImportantPersonCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">A patient's special status granted by the scoping organization</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CPatientEncounter</id>
+         <name>PatientEncounter</name>
+         <notes>An interaction between a patient and care provider(s) for the purpose of providing healthcare-related service(s).  </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="admissionReferralSourceCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The type of place or organization responsible for the patient immediately prior to a patient encounter.</attribute>
+         <attribute name="lengthOfStayQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="PQ.TIME">The total quantity of time when the subject is expected to be or was resident at a facility as part of an encounter.</attribute>
+         <attribute name="dischargeDispositionCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The disposition of the patient at the time of discharge.</attribute>
+         <attribute name="preAdmitTestInd" minCard="0" maxCard="1" type="BL">An indication that pre-admission tests are required for this patient encounter.</attribute>
+         <attribute name="specialCourtesiesCode"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;CD&gt;">Extraordinary considerations or services provided within the context of the Patient Encounter.</attribute>
+         <attribute name="specialArrangementCode"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;CD&gt;">Extraordinary provisions required in the context of the patient encounter.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CPerson</id>
+         <name>Person</name>
+         <notes>A human being.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="addr" minCard="0" maxCard="*" type="COLL&lt;AD&gt;">The postal or residential address of a person.</attribute>
+         <attribute name="maritalStatusCode" minCard="0" maxCard="1" type="CD">The domestic partnership status of a person.</attribute>
+         <attribute name="educationLevelCode" minCard="0" maxCard="1" type="CD">The highest level of education a person achieved.</attribute>
+         <attribute name="disabilityCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">A person's disability.</attribute>
+         <attribute name="livingArrangementCode" minCard="0" maxCard="1" type="CD">The housing situation of a person.</attribute>
+         <attribute name="religiousAffiliationCode"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD">The primary religious preference of a person.</attribute>
+         <attribute name="raceCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">A code classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.</attribute>
+         <attribute name="ethnicGroupCode" minCard="0" maxCard="*" type="DSET&lt;CD&gt;">A code classifying the person into a named category of humans sharing a common real or presumed heritage.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CPlace</id>
+         <name>Place</name>
+         <notes>A bounded physical place or site, including any contained structures. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="mobileInd" minCard="0" maxCard="1" type="BL">An indication as to whether the facility has the capability to move freely from one location to another.</attribute>
+         <attribute name="addr" minCard="0" maxCard="1" type="AD">The physical address of the place. </attribute>
+         <attribute name="directionsText" minCard="0" maxCard="1" type="ED">A free text note that carries information related to a place that is useful for entities accessing that place.</attribute>
+         <attribute name="positionText" minCard="0" maxCard="1" type="ED">A set of codes that locates the site within a mapping scheme. </attribute>
+         <attribute name="gpsText" minCard="0" maxCard="1" type="ST.SIMPLE">The global positioning system coordinates of a place.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CPublicHealthCase</id>
+         <name>PublicHealthCase</name>
+         <notes>An Observation representing a condition or event, or a set of conditions or events, that has a specific significance for a population or community of persons. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="detectionMethodCode" minCard="0" maxCard="1" type="CD">The method by which the public health department was made aware of the case.</attribute>
+         <attribute name="transmissionModeCode" minCard="0" maxCard="1" type="CD">The mechanism by which disease was acquired by the living subject involved in the public health case.</attribute>
+         <attribute name="diseaseImportedCode" minCard="0" maxCard="1" type="CD">Whether the disease was likely acquired outside the jurisdiction of observation, and if so, the nature of the inter-jurisdictional relationship.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CQualifiedEntity</id>
+         <name>QualifiedEntity</name>
+         <notes>An entity that has been recognized as having certain training, experience or other characteristics that would make the entity an appropriate performer for a certain activity. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="equivalenceInd" minCard="0" maxCard="1" type="BL">Indication that the scoper recognizes a combination of qualifications equivalent to the normal definition of the term encoded in the Role attribute.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CQueryAck</id>
+         <name>QueryAck</name>
+         <notes>A response to a query.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="queryResponseCode" minCard="0" maxCard="1" type="CS">The result status of the query.</attribute>
+         <attribute name="resultTotalQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The number of matches for a processed query specification.</attribute>
+         <attribute name="resultCurrentQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The number of matches for a processed query specification included in the response.</attribute>
+         <attribute name="resultRemainingQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The number of matches for a processed query specification that have yet to be sent to receiver.</attribute>
+         <attribute name="continuationToken"
+                    minCard="0"
+                    maxCard="1"
+                    type="ST.SIMPLE">The continuation state of the query server.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CQueryByParameter</id>
+         <name>QueryByParameter</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CQueryContinuation</id>
+         <name>QueryContinuation</name>
+         <notes>A request for further data.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="startResultNumber" minCard="0" maxCard="1" type="INT.POS">The instance number in the original query result set at which to start in the next query response message.</attribute>
+         <attribute name="continuationQuantity"
+                    minCard="0"
+                    maxCard="1"
+                    type="INT.NONNEG">The number of instance matches to return in the next query response message.  If set to "0", indicates the query should be closed/terminated.</attribute>
+         <attribute name="continuationToken"
+                    minCard="0"
+                    maxCard="1"
+                    type="ST.SIMPLE">The continuationToken specified by the responding system.</attribute>
+      </object>
+      <object isAbstract="true">
+         <id>CRoleHeir</id>
+         <name>RoleHeir</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CRoleLink</id>
+         <name>RoleLink</name>
+         <notes>A connection between two roles expressing a dependency between those roles and permitting the authorization or nullification of a dependent role based on status changes in its causal or directing role. The RoleLink may be operated over time and thus whose state and identity must be managed.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The kind of connection represented by this RoleLink, e.g., has-part, has-authority.</attribute>
+         <attribute name="id" minCard="0" maxCard="*" type="DSET&lt;II&gt;">A unique identifier used to refer to a specific instance of a RoleLink that may have the same Roles as another Roles.</attribute>
+         <attribute name="statusCode" minCard="0" maxCard="1" type="CS">The status of the RoleLink.</attribute>
+         <attribute name="priorityNumber" minCard="0" maxCard="1" type="INT.NONNEG">An integer specifying the relative preference for considering this  relationship before other like-typed relationships having the same source.</attribute>
+         <attribute name="effectiveTime" minCard="0" maxCard="1" type="IVL&lt;TS&gt;">An interval of time specifying the period during which the connection between Roles is in effect.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CSortControl</id>
+         <name>SortControl</name>
+         <notes>The sort order for instance matches to a query.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="sequenceNumber" minCard="0" maxCard="1" type="INT.NONNEG">The precedence of the SortControls for a given query.</attribute>
+         <attribute name="elementName" minCard="0" maxCard="1" type="SC.NT">The RIM element in a query response upon which to sort.</attribute>
+         <attribute name="directionCode" minCard="0" maxCard="1" type="CS">The direction of the sort.</attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CSubstanceAdministration</id>
+         <name>SubstanceAdministration</name>
+         <notes>A type of procedure that involves a performer introducing or otherwise applying a material into or to the subject. </notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="routeCode" minCard="0" maxCard="1" type="CD">The physiological path or route for introducing the therapeutic material into or onto the subject.</attribute>
+         <attribute name="doseQuantity" minCard="0" maxCard="1" type="PQ">Specifies the amount of the player Entity of the "consumable" Participation's role that was or is to be given at one administration event.</attribute>
+         <attribute name="rateQuantity" minCard="0" maxCard="1" type="PQ">The speed with which the substance is introduced into the subject, expressed as a physical (extensive) quantity over elapsed time.</attribute>
+         <attribute name="doseCheckQuantity"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;RTO&gt;">The ratio of a quantity of a substance that was or is intended to be administered over a period of time.</attribute>
+         <attribute name="maxDoseQuantity" minCard="0" maxCard="*" type="DSET&lt;RTO&gt;">The maximum total quantity of a substance to be administered to a subject over the period of time.</attribute>
+         <attribute name="administrationUnitCode" minCard="0" maxCard="1" type="CD">A unit for the administered substance. </attribute>
+      </object>
+      <object isAbstract="false">
+         <id>CTransmissionRelationship</id>
+         <name>TransmissionRelationship</name>
+         <notes>A directed association between a source Transmission and a target Transmission.</notes>
+         <type>Class</type>
+         <parentId>PDEFN==RIM==</parentId>
+         <attribute name="typeCode"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true">The purpose of a TransmissionRelationship instance.</attribute>
+      </object>
+   </objects>
+   <relationships>
+      <relationship>
+         <sourceId>PDEFN=UV=DT=2.0</sourceId>
+         <destId>PDEFN==RIM==</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=VO=1175-20120802</sourceId>
+         <destId>PDEFN==RIM==</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAcknowledgement</sourceId>
+         <sourceLabel>acknowledgement</sourceLabel>
+         <sourceCard>1..1</sourceCard>
+         <destId>CAcknowledgementDetail</destId>
+         <destLabel>acknowledgementDetail</destLabel>
+         <destCard>0..*</destCard>
+         <notes>Identifies the relationship between an acknowledgment and the error, warning and informational detail accompanying that acknowledgment.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CActRelationship</sourceId>
+         <sourceLabel>inboundRelationship</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CAct</destId>
+         <destLabel>target</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CActRelationship</sourceId>
+         <sourceLabel>outboundRelationship</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CAct</destId>
+         <destLabel>source</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CCommunicationFunction</sourceId>
+         <sourceLabel>communicationFunction</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CEntity</destId>
+         <destLabel>entity</destLabel>
+         <destCard>1..*</destCard>
+         <notes>This relationship allows the entities playing the various communication functions to be identified.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CRole</sourceId>
+         <sourceLabel>playedRole</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CEntity</destId>
+         <destLabel>player</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CRole</sourceId>
+         <sourceLabel>scopedRole</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CEntity</destId>
+         <destLabel>scoper</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CEntity</sourceId>
+         <sourceLabel>entity</sourceLabel>
+         <sourceCard>1..1</sourceCard>
+         <destId>CLanguageCommunication</destId>
+         <destLabel>languageCommunication</destLabel>
+         <destCard>0..*</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CControlAct</sourceId>
+         <sourceLabel>controlAct</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CMessage</destId>
+         <destLabel>payload</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CParameter</sourceId>
+         <sourceLabel>parameter</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CParameterList</destId>
+         <destLabel>parameterList</destLabel>
+         <destCard>0..1</destCard>
+         <notes>Specifies the relationship between a parameter list and the parameters which are its content.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CAct</sourceId>
+         <sourceLabel>act</sourceLabel>
+         <sourceCard>1..1</sourceCard>
+         <destId>CParticipation</destId>
+         <destLabel>participation</destLabel>
+         <destCard>0..*</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CParameter</sourceId>
+         <sourceLabel>parameter</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CQueryByParameter</destId>
+         <destLabel>queryByParameter</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CControlAct</sourceId>
+         <sourceLabel>controlAct</sourceLabel>
+         <sourceCard>1..1</sourceCard>
+         <destId>CQueryEvent</destId>
+         <destLabel>queryEvent</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CRoleLink</sourceId>
+         <sourceLabel>inboundLink</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CRole</destId>
+         <destLabel>target</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CRoleLink</sourceId>
+         <sourceLabel>outboundLink</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CRole</destId>
+         <destLabel>source</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CParticipation</sourceId>
+         <sourceLabel>participation</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CRole</destId>
+         <destLabel>role</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CQuerySpec</sourceId>
+         <sourceLabel>querySpec</sourceLabel>
+         <sourceCard>1..1</sourceCard>
+         <destId>CSortControl</destId>
+         <destLabel>sortControl</destLabel>
+         <destCard>0..*</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CAcknowledgement</sourceId>
+         <sourceLabel>acknowledgedBy</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>acknowledges</destLabel>
+         <destCard>1..1</destCard>
+         <notes>Identifies the relationship between a transmission and the acknowledgements that acknowledge that transmission.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CAttachment</sourceId>
+         <sourceLabel>attachment</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>transmission</destLabel>
+         <destCard>0..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CAttentionLine</sourceId>
+         <sourceLabel>attentionLine</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>transmission</destLabel>
+         <destCard>1..1</destCard>
+         <notes>This relationship allows parameters for a technology-specific transport to be represented in the V3 transmission outer wrapper.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CBatch</sourceId>
+         <sourceLabel>batch</sourceLabel>
+         <sourceCard>0..1</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>transmission</destLabel>
+         <destCard>0..*</destCard>
+         <notes>Comment: Contained transmissions inherit all elements of the containing transmission unless explicitly overridden, such as sender, receiver, attachments, transmission time, etc. This is applicable, but not limited to Messages (interactions with a Message-class entry-point) contained in a Batch (interactions with a Batch-class entry-point).</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CCommunicationFunction</sourceId>
+         <sourceLabel>communicationFunction</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>transmission</destLabel>
+         <destCard>1..*</destCard>
+         <notes>This relation links a transmission to its sender, receiver, call-back party, etc.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CAcknowledgement</sourceId>
+         <sourceLabel>conveyedAcknowledgement</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>conveyingTransmission</destLabel>
+         <destCard>1..1</destCard>
+         <notes>Identifies the relationship between an acknowledgment and the transmission conveying that acknowledgement.</notes>
+      </relationship>
+      <relationship>
+         <sourceId>CTransmissionRelationship</sourceId>
+         <sourceLabel>inboundRelationship</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>target</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CTransmissionRelationship</sourceId>
+         <sourceLabel>outboundRelationship</sourceLabel>
+         <sourceCard>0..*</sourceCard>
+         <destId>CTransmission</destId>
+         <destLabel>source</destLabel>
+         <destCard>1..1</destCard>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CAccess</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAccount</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAcknowledgement</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAcknowledgementDetail</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAct</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CActHeir</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CActRelationship</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAttachment</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CAttentionLine</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CBatch</sourceId>
+         <destId>CTransmission</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CCommunicationFunction</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CContainer</sourceId>
+         <destId>CManufacturedMaterial</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CContextStructure</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CControlAct</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CDevice</sourceId>
+         <destId>CManufacturedMaterial</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CDeviceTask</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CDiagnosticImage</sourceId>
+         <destId>CObservation</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CDiet</sourceId>
+         <destId>CSupply</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CDocument</sourceId>
+         <destId>CContextStructure</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CEmployee</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CEntity</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CEntityHeir</sourceId>
+         <destId>CEntity</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CExposure</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CFinancialContract</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CFinancialTransaction</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CInvoiceElement</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CLanguageCommunication</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CLicensedEntity</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CLivingSubject</sourceId>
+         <destId>CEntity</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CManagedParticipation</sourceId>
+         <destId>CParticipation</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CManufacturedMaterial</sourceId>
+         <destId>CMaterial</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CMaterial</sourceId>
+         <destId>CEntity</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CMessage</sourceId>
+         <destId>CTransmission</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CNonPersonLivingSubject</sourceId>
+         <destId>CLivingSubject</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CObservation</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>COrganization</sourceId>
+         <destId>CEntity</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CParameter</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CParameterItem</sourceId>
+         <destId>CParameter</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CParameterList</sourceId>
+         <destId>CParameter</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CParticipation</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPatient</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPatientEncounter</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPerson</sourceId>
+         <destId>CLivingSubject</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPlace</sourceId>
+         <destId>CEntity</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CProcedure</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPublicHealthCase</sourceId>
+         <destId>CObservation</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQualifiedEntity</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQueryAck</sourceId>
+         <destId>CQueryEvent</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQueryByParameter</sourceId>
+         <destId>CQuerySpec</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQueryContinuation</sourceId>
+         <destId>CQueryEvent</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQueryEvent</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CQuerySpec</sourceId>
+         <destId>CQueryEvent</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CRole</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CRoleHeir</sourceId>
+         <destId>CRole</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CRoleLink</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CSortControl</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CSubstanceAdministration</sourceId>
+         <destId>CProcedure</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CSupply</sourceId>
+         <destId>CAct</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CTransmission</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>CTransmissionRelationship</sourceId>
+         <destId>CInfrastructureRoot</destId>
+         <type>Generalization</type>
+      </relationship>
+      <relationship>
+         <sourceId>EAct</sourceId>
+         <destId>CAct</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+      <relationship>
+         <sourceId>EEntity</sourceId>
+         <destId>CEntity</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+      <relationship>
+         <sourceId>EParameter</sourceId>
+         <destId>CParameter</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+      <relationship>
+         <sourceId>EQueryByParameter</sourceId>
+         <destId>CQueryByParameter</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+      <relationship>
+         <sourceId>ERole</sourceId>
+         <destId>CRole</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+      <relationship>
+         <sourceId>ETransmission</sourceId>
+         <destId>CTransmission</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+   </relationships>
+</max:model>

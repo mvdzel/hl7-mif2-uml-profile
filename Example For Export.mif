@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mif:staticModel xmlns:mif="urn:hl7-org:v3/mif2"
+                 conformanceLevel="International"
+                 schemaVersion="2.2.0"
+                 representationKind="flat"
+                 isAbstract="false"
+                 title="A_BasicObservation"
+                 isSerializable="true">
+   <mif:packageLocation root="DEFN"
+                        realmNamespace="UV"
+                        artifact="EX"
+                        domain="CT"
+                        id="000001"/>
+   <mif:derivedFrom staticModelDerivationId="1">
+      <mif:targetStaticModel root="DEFN" realmNamespace="UV" artifact="RIM" id="0240"/>
+   </mif:derivedFrom>
+   <mif:entryPoint id="COCT_EX000001" className="" name="A_BasicObservation"/>
+   <mif:containedClass>
+      <mif:class name="Organizer">
+         <mif:attribute name="classCode"
+                        sortKey="1"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        isImmutable="true">
+            <mif:type name="CS"/>
+            <mif:vocabularyDeclaration>
+               <mif:code code="ORG"/>
+            </mif:vocabularyDeclaration>
+         </mif:attribute>
+         <mif:attribute name="code"
+                        sortKey="2"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="true"
+                        isImmutable="true">
+            <mif:type name="CD"/>
+         </mif:attribute>
+      </mif:class>
+   </mif:containedClass>
+   <mif:containedClass>
+      <mif:class name="Observation">
+         <mif:attribute name="classCode"
+                        sortKey="1"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        isImmutable="true">
+            <mif:type name="CS"/>
+            <mif:vocabularyDeclaration>
+               <mif:code code="OBS"/>
+            </mif:vocabularyDeclaration>
+         </mif:attribute>
+         <mif:attribute name="code"
+                        sortKey="2"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="true"
+                        isImmutable="false">
+            <mif:type name="CD"/>
+         </mif:attribute>
+         <mif:attribute name="value"
+                        sortKey="3"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="true"
+                        isImmutable="false">
+            <mif:type name="ANY"/>
+         </mif:attribute>
+      </mif:class>
+   </mif:containedClass>
+   <mif:containedClass>
+      <mif:class name="Component">
+         <mif:attribute name="typeCode"
+                        sortKey="1"
+                        minimumMultiplicity="1"
+                        maximumMultiplicity="1"
+                        conformance="R"
+                        isMandatory="false"
+                        isImmutable="true">
+            <mif:type name="CS"/>
+            <mif:vocabularyDeclaration>
+               <mif:code code="CMP"/>
+            </mif:vocabularyDeclaration>
+         </mif:attribute>
+      </mif:class>
+   </mif:containedClass>
+   <mif:association>
+      <mif:traversableConnection name=""
+                                 minimumMultiplicity=""
+                                 maximumMultiplicity=""
+                                 isMandatory="false"
+                                 sortKey="1"
+                                 participantClassName="A_BasicObservation"/>
+      <mif:nonTraversableConnection participantClassName="Organizer"/>
+   </mif:association>
+   <mif:association>
+      <mif:traversableConnection name="component"
+                                 minimumMultiplicity="0"
+                                 maximumMultiplicity="*"
+                                 isMandatory="false"
+                                 sortKey="2"
+                                 participantClassName="Organizer"/>
+      <mif:nonTraversableConnection participantClassName="Component"/>
+   </mif:association>
+   <mif:association>
+      <mif:traversableConnection name="observation"
+                                 minimumMultiplicity="1"
+                                 maximumMultiplicity="1"
+                                 isMandatory="true"
+                                 sortKey="3"
+                                 participantClassName="Component"/>
+      <mif:nonTraversableConnection participantClassName="Observation"/>
+   </mif:association>
+</mif:staticModel>

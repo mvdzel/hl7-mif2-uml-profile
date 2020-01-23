@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<max:model xmlns:max="http://www.umcg.nl/MAX" xmlns:mif="urn:hl7-org:v3/mif2">
+   <objects>
+      <object>
+         <id>PDEFN=UV=MT=CO=090107</id>
+         <name>DEFN=UV=MT=CO=090107</name>
+         <stereotype>StaticModel</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN==RIM==</id>
+         <name>DEFN==RIM==</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=RM=COCT=090107</id>
+         <name>DEFN=UV=RM=COCT=090107</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=HD=COCT=090107</id>
+         <name>DEFN=UV=HD=COCT=090107</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=DT=2.0</id>
+         <name>DEFN=UV=DT=2.0</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=VO=1175-20120802</id>
+         <name>DEFN=UV=VO=1175-20120802</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=IFC=1.12.2</id>
+         <name>DEFN=UV=IFC=1.12.2</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>ER_AssignedPerson informational</id>
+         <name>R_AssignedPerson informational</name>
+         <alias>COCT_MT090107UV</alias>
+         <notes>5 March 2006 Supports messages related to an assigned person. An assigned role is one in which the agent is an entity acting in the employ of an organization. The focus is on functional role on behalf of the organization, 3-5-2006 Changed AssignedPerson.id from Mandatory[1..*] to Optional[0..*] Person.name constrained to BAG&lt;PN&gt; Property-contextConductionStyle: I </notes>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN=UV=MT=CO=090107</parentId>
+      </object>
+      <object isAbstract="true">
+         <id>CPrincipalChoiceList</id>
+         <name>PrincipalChoiceList</name>
+         <stereotype>Choice</stereotype>
+         <type>Class</type>
+         <parentId>PDEFN=UV=MT=CO=090107</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CAssignedPerson</id>
+         <name>AssignedPerson</name>
+         <notes/>
+         <type>Class</type>
+         <parentId>PDEFN=UV=MT=CO=090107</parentId>
+         <attribute name="classCode"
+                    value="ASSIGNED"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="id"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;II&gt;"
+                    isReadOnly="false"/>
+         <attribute name="code"
+                    alias="role in organization"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD"
+                    isReadOnly="false"/>
+         <attribute name="addr"
+                    minCard="0"
+                    maxCard="*"
+                    type="COLL&lt;AD&gt;"
+                    isReadOnly="false"/>
+         <attribute name="telecom"
+                    minCard="0"
+                    maxCard="*"
+                    type="COLL&lt;TEL&gt;"
+                    isReadOnly="false"/>
+      </object>
+      <object isAbstract="false">
+         <id>CPerson</id>
+         <name>Person</name>
+         <notes/>
+         <type>Class</type>
+         <parentId>CPrincipalChoiceList</parentId>
+         <attribute name="classCode"
+                    value="PSN"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="determinerCode"
+                    value="INSTANCE"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="name"
+                    minCard="1"
+                    maxCard="*"
+                    type="COLL&lt;PN&gt;"
+                    isReadOnly="false"/>
+      </object>
+      <object>
+         <id>CE_OrganizationInformational</id>
+         <name>E_OrganizationInformational</name>
+         <stereotype>CommonModelElementRef</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN=UV=MT=CO=090107</parentId>
+      </object>
+   </objects>
+   <relationships>
+      <relationship>
+         <label>staticModelDerivationId=1</label>
+         <sourceId>PDEFN==RIM==</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <label>staticModelDerivationId=2</label>
+         <sourceId>PDEFN=UV=RM=COCT=090107</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <label>staticModelDerivationId=3</label>
+         <sourceId>PDEFN=UV=HD=COCT=090107</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=DT=2.0</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=VO=1175-20120802</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=IFC=1.12.2</sourceId>
+         <destId>PDEFN=UV=MT=CO=090107</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPrincipalChoiceList</sourceId>
+         <sourceLabel>assignedPrincipalChoiceList</sourceLabel>
+         <sourceCard>0..1</sourceCard>
+         <destId>CAssignedPerson</destId>
+         <destLabel>playedRole</destLabel>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CE_OrganizationInformational</sourceId>
+         <sourceLabel>representedOrganization</sourceLabel>
+         <sourceCard>0..1</sourceCard>
+         <destId>CAssignedPerson</destId>
+         <destLabel>scopedRole</destLabel>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>ER_AssignedPerson informational</sourceId>
+         <destId>CAssignedPerson</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+   </relationships>
+</max:model>

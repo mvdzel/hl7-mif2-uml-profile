@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<max:model xmlns:max="http://www.umcg.nl/MAX" xmlns:mif="urn:hl7-org:v3/mif2">
+   <objects>
+      <object>
+         <id>PDEFN=UV=MT=CT=150007</id>
+         <name>DEFN=UV=MT=CT=150007</name>
+         <stereotype>StaticModel</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN==RIM==0240</id>
+         <name>DEFN==RIM==0240</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=RM=CT=150007</id>
+         <name>DEFN=UV=RM=CT=150007</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=HD=CT=150007</id>
+         <name>DEFN=UV=HD=CT=150007</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=DT=2.0</id>
+         <name>DEFN=UV=DT=2.0</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=VO=1175-20120802</id>
+         <name>DEFN=UV=VO=1175-20120802</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>PDEFN=UV=IFC=1.12.2</id>
+         <name>DEFN=UV=IFC=1.12.2</name>
+         <stereotype>StaticModelRef</stereotype>
+         <type>Package</type>
+      </object>
+      <object>
+         <id>EE_Organization informational</id>
+         <name>E_Organization informational</name>
+         <alias>COCT_MT150007UV</alias>
+         <notes>5 March 2006 Specification of information to contact an organization 3-5-2006 Changed Organization.id from Mandatory[1..*] to Optional[0..*] Constrained Organization.name to BAG&lt;ON&gt; Constarined Person.name to BAG&lt;PN&gt; Property-contextConductionStyle: I </notes>
+         <stereotype>EntryPoint</stereotype>
+         <type>Interface</type>
+         <parentId>PDEFN=UV=MT=CT=150007</parentId>
+      </object>
+      <object isAbstract="false">
+         <id>CContactParty</id>
+         <name>ContactParty</name>
+         <notes/>
+         <type>Class</type>
+         <parentId>PDEFN=UV=MT=CT=150007</parentId>
+         <attribute name="classCode"
+                    value="CON"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="id"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;II&gt;"
+                    isReadOnly="false"/>
+         <attribute name="code"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD"
+                    isReadOnly="false"/>
+         <attribute name="addr"
+                    minCard="0"
+                    maxCard="*"
+                    type="COLL&lt;AD&gt;"
+                    isReadOnly="false"/>
+         <attribute name="telecom"
+                    minCard="0"
+                    maxCard="*"
+                    type="COLL&lt;TEL&gt;"
+                    isReadOnly="false"/>
+      </object>
+      <object isAbstract="false">
+         <id>COrganization</id>
+         <name>Organization</name>
+         <notes/>
+         <type>Class</type>
+         <parentId>PDEFN=UV=MT=CT=150007</parentId>
+         <attribute name="classCode"
+                    value="ORG"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="determinerCode"
+                    value="INSTANCE"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="id"
+                    minCard="0"
+                    maxCard="*"
+                    type="DSET&lt;II&gt;"
+                    isReadOnly="false"/>
+         <attribute name="code"
+                    minCard="0"
+                    maxCard="1"
+                    type="CD"
+                    isReadOnly="false"/>
+         <attribute name="name"
+                    minCard="0"
+                    maxCard="*"
+                    type="COLL&lt;ON&gt;"
+                    isReadOnly="false"/>
+      </object>
+      <object isAbstract="false">
+         <id>CPerson</id>
+         <name>Person</name>
+         <notes/>
+         <type>Class</type>
+         <parentId>PDEFN=UV=MT=CT=150007</parentId>
+         <attribute name="classCode"
+                    value="PSN"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="determinerCode"
+                    value="INSTANCE"
+                    minCard="1"
+                    maxCard="1"
+                    type="CS"
+                    isReadOnly="true"/>
+         <attribute name="name"
+                    minCard="1"
+                    maxCard="*"
+                    type="COLL&lt;PN&gt;"
+                    isReadOnly="false"/>
+      </object>
+   </objects>
+   <relationships>
+      <relationship>
+         <label>staticModelDerivationId=1</label>
+         <sourceId>PDEFN==RIM==0240</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <label>staticModelDerivationId=2</label>
+         <sourceId>PDEFN=UV=RM=CT=150007</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <label>staticModelDerivationId=3</label>
+         <sourceId>PDEFN=UV=HD=CT=150007</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>DerivedFrom</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=DT=2.0</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=VO=1175-20120802</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>PDEFN=UV=IFC=1.12.2</sourceId>
+         <destId>PDEFN=UV=MT=CT=150007</destId>
+         <stereotype>import</stereotype>
+         <type>Dependency</type>
+      </relationship>
+      <relationship>
+         <sourceId>CPerson</sourceId>
+         <sourceLabel>contactPerson</sourceLabel>
+         <sourceCard>0..1</sourceCard>
+         <destId>CContactParty</destId>
+         <destLabel>playedRole</destLabel>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>CContactParty</sourceId>
+         <sourceLabel>contactParty</sourceLabel>
+         <sourceCard>1..*</sourceCard>
+         <destId>COrganization</destId>
+         <destLabel>scoper</destLabel>
+         <notes/>
+      </relationship>
+      <relationship>
+         <sourceId>EE_Organization informational</sourceId>
+         <destId>COrganization</destId>
+         <type>DirectedAssociation</type>
+      </relationship>
+   </relationships>
+</max:model>

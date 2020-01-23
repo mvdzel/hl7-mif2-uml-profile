@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="6857951F-F" name="MIF2" version="1.0" notes="MIF2"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Choice" notes="" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIACqr10IkAJ079wAAAHQCAAAHABEAc3RyLmRhdFVUDQAH0WfHUdFnx1HRZ8dR
+jZJLT8JQEEa/LST8h6ZsMHGha8ICxYSVC3Vvim2ApC2kDwkx/HfPDK0FE9DcdDqPM9OZuS21
+UqStEgXK0NbKNVBfXy57SvHttVGtirN3cqJQD/gKxVgF1rihc7ylV4zRdk5WEDVcR630DpHy
+rSUZxnwQzyHPq22xrJ9KI7xDtIgeE7RQNz9Uiafyajla6V2maJYz01Svmp/xGZ19es4G5k63
+PF20rdNF75GXiWP0v9Rl4nfUZNAc22bMZLUWzXbtFmy+R3IzLNt6AjOjZsRWC99USM3AqSc9
+6w35crKJdnvd/V+vduTb/6JH1Py7P7JGJzMd/H3QN1BLAQIXCxQAAAAIACqr10IkAJ079wAA
+AHQCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0VVQFAAfRZ8dRUEsFBgAAAAABAAEAPgAA
+AC0BAAAAAA==</Image>
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="CommonModelElementRef" notes="A reference to an external interface intended to be resolved to a model, imported and re-used at this point." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAC533ULKZOpfjAAAAFgBAAAHABEAc3RyLmRhdFVUDQAH8/XOUfP1zlHz9c5R
+jY7LCoJQFEXXNKF/iEZXaGBCo0ZBA+d+gVRQ4CO6lyLEf3dfe1iCIAfOa6/zsJzJuHJiQaHs
+QsmcgLrzM47c1H2om+Gk3kXa74whZPsmrWpH3m3wjOOpyjNL9uxISZQNeb+l5EAlttItQ8xG
+thrEfq4Q579wioZIRPSjfu736lp+nHipU6lx4l9taAFQSwECFwsUAAAACAAud91CymTqX4wA
+AABYAQAABwAJAAAAAAAAAAAAAIAAAAAAc3RyLmRhdFVUBQAH8/XOUVBLBQYAAAAAAQABAD4A
+AADCAAAAAAA=</Image>
+				<AppliesTo>
+					<Apply type="Interface"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ConceptDomain" notes="Information about a concept domain that constrains the semantic values of one or more coded attributes or datatype properties." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="DerivedFrom" notes="Identifies static models from which the current model is derived" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Dependency">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="EntryPoint" notes="Identifies a class within the model that may be used as the initial class in a serializable representation of the model." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAFJ33UJfF0+O2AAAAPIBAAAHABEAc3RyLmRhdFVUDQAHEfbOURH2zlER9s5R
+hZHNCsJADITnWsF3kHqp4EHxKD6LrK1Uof5gWz1I390v0bU9CFJ2k2xmJj+tdVDQVXtNdMI7
+6qyxRnr6nagm03j+rEylR62/3rTThbtwP8evPM400xy1FXb9UbmByWEGVEpwe1ALUHaW3L3t
+OQWsoAeMAPOoO6z6261VicgAtiDX0tEQkeJVMAOv1t+J94Bqg2fzNCCs09hB9KJy3EC/oX96
+b0bcXQJz++GU5CfacFIYFh+8fpwhYb5fWNtxw2fVhuirq1jNyv9MCjrTdNDhlDnSwZY6t51e
+UEsBAhcLFAAAAAgAUnfdQl8XT47YAAAA8gEAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRV
+VAUABxH2zlFQSwUGAAAAAAEAAQA+AAAADgEAAAAA</Image>
+				<AppliesTo>
+					<Apply type="Interface"/>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="Import" notes="Used by this model, one of:&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;the datatype model&lt;/li&gt;&#xA;	&lt;li&gt;the vocabulary model&lt;/li&gt;&#xA;	&lt;li&gt;the common elements&lt;/li&gt;&#xA;&lt;/ul&gt;" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Dependency">
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="StaticModel" notes="A static Model in standard (flat) notation. Used for RIM, CIM, LIM, etc." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="URI" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="ConformanceKind" type="enumeration" description="Identifies the type of conformance rules the model is subject to." unit="" values="International,RealmExtension,Localization" default=""/>
+					<Tag name="IsSerializable" type="Boolean" description="Identifies whether this model can be represented in a serialized form." unit="" values="True,False" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="StaticModelRef" notes="A reference to an external interface intended to be resolved to a model, imported and re-used at this point." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAASs10LKZOpfjAAAAFgBAAAHABEAc3RyLmRhdFVUDQAHUmnHUVJpx1FSacdR
+jY7LCoJQFEXXNKF/iEZXaGBCo0ZBA+d+gVRQ4CO6lyLEf3dfe1iCIAfOa6/zsJzJuHJiQaHs
+QsmcgLrzM47c1H2om+Gk3kXa74whZPsmrWpH3m3wjOOpyjNL9uxISZQNeb+l5EAlttItQ8xG
+thrEfq4Q579wioZIRPSjfu736lp+nHipU6lx4l9taAFQSwECFwsUAAAACAAErNdCymTqX4wA
+AABYAQAABwAJAAAAAAAAAAAAAIAAAAAAc3RyLmRhdFVUBQAHUmnHUVBLBQYAAAAAAQABAD4A
+AADCAAAAAAA=</Image>
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="URI" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="ValueSet" notes="Information about a value set that drawn from one or more code systems." bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="VocabularyDeclaration" notes="Indicates the vocabulary constraints that apply to the attribute" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="compositionKind" value="none"/>
+						<Property name="direction" value="Source -&gt; Destination"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<uml:Profile xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmi:id="6857951F-F" nsPrefix="MIF2" name="MIF2" metamodelReference="mmref01">
+	<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="6857951F-F">
+		<body> Version:1.0</body>
+	</ownedComment>
+	<packageImport xmi:id="mmref01">
+		<importedPackage href="http://www.omg.org/spec/UML/20110701"/>
+	</packageImport>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="StaticModelRef" name="StaticModelRef">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="StaticModelRef-base_Package" name="base_Package" association="Package_StaticModelRef">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Package"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Package_StaticModelRef" name="A_Package_StaticModelRef" memberEnd="extension_StaticModelRef StaticModelRef-base_Package">
+		<ownedEnd xmi:id="extension_StaticModelRef" name="extension_StaticModelRef" type="StaticModelRef" isComposite="true" lower="0" upper="1" memberEnd="extension_StaticModelRef StaticModelRef-base_Package"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="Import" name="Import">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="Import-base_Dependency" name="base_Dependency" association="Dependency_Import">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Dependency"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Dependency_Import" name="A_Dependency_Import" memberEnd="extension_Import Import-base_Dependency">
+		<ownedEnd xmi:id="extension_Import" name="extension_Import" type="Import" isComposite="true" lower="0" upper="1" memberEnd="extension_Import Import-base_Dependency"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="EntryPoint" name="EntryPoint">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="EntryPoint-base_Interface" name="base_Interface" association="Interface_EntryPoint">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Interface"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Interface_EntryPoint" name="A_Interface_EntryPoint" memberEnd="extension_EntryPoint EntryPoint-base_Interface">
+		<ownedEnd xmi:id="extension_EntryPoint" name="extension_EntryPoint" type="EntryPoint" isComposite="true" lower="0" upper="1" memberEnd="extension_EntryPoint EntryPoint-base_Interface"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="Choice" name="Choice">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="Choice-base_Class" name="base_Class" association="Class_Choice">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Class_Choice" name="A_Class_Choice" memberEnd="extension_Choice Choice-base_Class">
+		<ownedEnd xmi:id="extension_Choice" name="extension_Choice" type="Choice" isComposite="true" lower="0" upper="1" memberEnd="extension_Choice Choice-base_Class"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="ConceptDomain" name="ConceptDomain">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="ConceptDomain-base_Class" name="base_Class" association="Class_ConceptDomain">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Class_ConceptDomain" name="A_Class_ConceptDomain" memberEnd="extension_ConceptDomain ConceptDomain-base_Class">
+		<ownedEnd xmi:id="extension_ConceptDomain" name="extension_ConceptDomain" type="ConceptDomain" isComposite="true" lower="0" upper="1" memberEnd="extension_ConceptDomain ConceptDomain-base_Class"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="DerivedFrom" name="DerivedFrom">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="DerivedFrom-base_Dependency" name="base_Dependency" association="Dependency_DerivedFrom">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Dependency"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Dependency_DerivedFrom" name="A_Dependency_DerivedFrom" memberEnd="extension_DerivedFrom DerivedFrom-base_Dependency">
+		<ownedEnd xmi:id="extension_DerivedFrom" name="extension_DerivedFrom" type="DerivedFrom" isComposite="true" lower="0" upper="1" memberEnd="extension_DerivedFrom DerivedFrom-base_Dependency"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="VocabularyDeclaration" name="VocabularyDeclaration">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="VocabularyDeclaration-base_Association" name="base_Association" association="Association_VocabularyDeclaration">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Association"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Association_VocabularyDeclaration" name="A_Association_VocabularyDeclaration" memberEnd="extension_VocabularyDeclaration VocabularyDeclaration-base_Association">
+		<ownedEnd xmi:id="extension_VocabularyDeclaration" name="extension_VocabularyDeclaration" type="VocabularyDeclaration" isComposite="true" lower="0" upper="1" memberEnd="extension_VocabularyDeclaration VocabularyDeclaration-base_Association"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="ValueSet" name="ValueSet">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="ValueSet-base_Class" name="base_Class" association="Class_ValueSet">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Class_ValueSet" name="A_Class_ValueSet" memberEnd="extension_ValueSet ValueSet-base_Class">
+		<ownedEnd xmi:id="extension_ValueSet" name="extension_ValueSet" type="ValueSet" isComposite="true" lower="0" upper="1" memberEnd="extension_ValueSet ValueSet-base_Class"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="CommonModelElementRef" name="CommonModelElementRef">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="CommonModelElementRef-base_Interface" name="base_Interface" association="Interface_CommonModelElementRef">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Interface"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Interface_CommonModelElementRef" name="A_Interface_CommonModelElementRef" memberEnd="extension_CommonModelElementRef CommonModelElementRef-base_Interface">
+		<ownedEnd xmi:id="extension_CommonModelElementRef" name="extension_CommonModelElementRef" type="CommonModelElementRef" isComposite="true" lower="0" upper="1" memberEnd="extension_CommonModelElementRef CommonModelElementRef-base_Interface"/>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Stereotype" xmi:id="StaticModel" name="StaticModel">
+		<ownedAttribute xmi:type="uml:Property" xmi:id="StaticModel-base_Package" name="base_Package" association="Package_StaticModel">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Package"/>
+		</ownedAttribute>
+		<ownedAttribute xmi:type="uml:Property" xmi:id="StaticModel-IsSerializable" name="IsSerializable">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#String"/>
+		</ownedAttribute>
+		<ownedAttribute xmi:type="uml:Property" xmi:id="StaticModel-ConformanceKind" name="ConformanceKind">
+			<type href="http://www.omg.org/spec/UML/20110701/UML.xmi#String"/>
+		</ownedAttribute>
+	</packagedElement>
+	<packagedElement xmi:type="uml:Extension" xmi:id="Package_StaticModel" name="A_Package_StaticModel" memberEnd="extension_StaticModel StaticModel-base_Package">
+		<ownedEnd xmi:id="extension_StaticModel" name="extension_StaticModel" type="StaticModel" isComposite="true" lower="0" upper="1" memberEnd="extension_StaticModel StaticModel-base_Package"/>
+	</packagedElement>
+</uml:Profile>

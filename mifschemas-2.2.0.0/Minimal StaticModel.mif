@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:staticModel conformanceLevel="NMTOKEN" isSerializable="true" representationKind="NMTOKEN" schemaVersion="2.2.0" xmlns:p="urn:hl7-org:v3/mif2" xmlns:p1="urn:hl7-org:xhtml1-hl7-types" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3/mif2 mif-COMPLETE.xsd ">
+  <p:entryPoint className="" name="token"/>
+  <p:containedClass>
+    <p:class name="NMTOKEN"/>
+  </p:containedClass>
+</p:staticModel>

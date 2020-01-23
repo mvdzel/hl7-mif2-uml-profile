@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" exportDate="1-7-2013 21:49:45" xmlns="http://www.umcg.nl/MAX">
+  <objects xmlns="">
+    <object>
+      <id>2175</id>
+      <name>Example For Export</name>
+      <type>Package</type>
+      <modified>2013-07-01T00:00:00</modified>
+    </object>
+    <object>
+      <id>2176</id>
+      <name>DEFN=UV=RIM==0240</name>
+      <notes />
+      <stereotype>StaticModelRef</stereotype>
+      <type>Package</type>
+      <parentId>2175</parentId>
+      <modified>2013-06-15T00:00:00</modified>
+    </object>
+    <object>
+      <id>2177</id>
+      <name>DEFN=UV=EX=CT=000001</name>
+      <notes />
+      <stereotype>StaticModel</stereotype>
+      <type>Package</type>
+      <parentId>2175</parentId>
+      <modified>2013-07-01T00:00:00</modified>
+      <tag name="ConformanceLevel" value="International" />
+      <tag name="IsSerializable" value="true" />
+    </object>
+    <object isAbstract="true">
+      <id>2180</id>
+      <name>A_BasicObservation</name>
+      <alias>COCT_EX000001</alias>
+      <notes>This is an example MIF UML model.
+Using export to MAX and then MAX2MIF to generate a MIF version.</notes>
+      <stereotype>EntryPoint</stereotype>
+      <type>Interface</type>
+      <parentId>2177</parentId>
+      <modified>2013-07-01T00:00:00</modified>
+    </object>
+    <object>
+      <id>2181</id>
+      <name>Organizer</name>
+      <notes />
+      <parentId>2177</parentId>
+      <modified>2013-07-01T00:00:00</modified>
+      <attribute name="classCode" value="ORG" type="CS" isReadOnly="true" />
+      <attribute name="code" minCard="1" maxCard="1" type="CD" isReadOnly="true" />
+    </object>
+    <object>
+      <id>2182</id>
+      <name>Observation</name>
+      <notes />
+      <parentId>2177</parentId>
+      <modified>2013-07-01T00:00:00</modified>
+      <attribute name="classCode" value="OBS" type="CS" isReadOnly="true" />
+      <attribute name="code" minCard="1" maxCard="1" type="CD" />
+      <attribute name="value" minCard="1" maxCard="1" type="ANY" />
+    </object>
+    <object>
+      <id>2183</id>
+      <name>Component</name>
+      <notes />
+      <parentId>2177</parentId>
+      <modified>2013-07-01T00:00:00</modified>
+      <attribute name="typeCode" value="CMP" type="CS" isReadOnly="true" />
+    </object>
+    <object>
+      <id>2178</id>
+      <name>DEFN=UV=DT=2.0</name>
+      <notes />
+      <stereotype>StaticModelRef</stereotype>
+      <type>Package</type>
+      <parentId>2175</parentId>
+      <modified>2013-06-15T00:00:00</modified>
+    </object>
+  </objects>
+  <relationships xmlns="">
+    <relationship>
+      <sourceId>2180</sourceId>
+      <destId>2181</destId>
+      <notes />
+    </relationship>
+    <relationship>
+      <sourceId>2182</sourceId>
+      <destId>1545</destId>
+      <notes />
+      <type>Generalization</type>
+    </relationship>
+    <relationship>
+      <sourceId>2183</sourceId>
+      <destId>1559</destId>
+      <notes />
+      <type>Generalization</type>
+    </relationship>
+    <relationship>
+      <sourceId>2181</sourceId>
+      <destId>2183</destId>
+      <destLabel>component</destLabel>
+      <destCard>0..*</destCard>
+      <notes />
+    </relationship>
+    <relationship>
+      <sourceId>2183</sourceId>
+      <destId>2182</destId>
+      <destLabel>observation</destLabel>
+      <destCard>1..1</destCard>
+      <notes />
+    </relationship>
+    <relationship>
+      <sourceId>2181</sourceId>
+      <destId>1545</destId>
+      <notes />
+      <type>Generalization</type>
+    </relationship>
+    <relationship>
+      <sourceId>2177</sourceId>
+      <destId>2176</destId>
+      <notes />
+      <stereotype>DerivedFrom</stereotype>
+      <type>Dependency</type>
+    </relationship>
+    <relationship>
+      <sourceId>2177</sourceId>
+      <destId>2178</destId>
+      <notes />
+      <stereotype>import</stereotype>
+      <type>Package</type>
+    </relationship>
+  </relationships>
+</model>
